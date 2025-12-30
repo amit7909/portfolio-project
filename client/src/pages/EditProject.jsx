@@ -28,7 +28,7 @@ const EditProject = () => {
       try {
         // NOTE: We assume your backend has a GET /projects/:id endpoint.
         // If not, you might need to fetch all and find the one matching the ID.
-        const response = await fetch(`http://localhost:5000/api/v1/projects/${id}`);
+        const response = await fetch(`https://portfolio-project-h6oi.onrender.com/api/v1/projects/${id}`);
         const json = await response.json();
 
         if (json.success) {
@@ -74,7 +74,7 @@ const EditProject = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/v1/projects/${id}`, {
+      const response = await fetch(`https://portfolio-project-h6oi.onrender.com/api/v1/projects/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

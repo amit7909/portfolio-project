@@ -25,7 +25,7 @@ const Signup = () => {
 
     try {
       // Assuming your backend has this endpoint. If not, ask your Backend AI to create it.
-      const response = await fetch('http://localhost:5000/api/v1/auth/register', {
+      const response = await fetch('https://portfolio-project-h6oi.onrender.com/api/v1/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

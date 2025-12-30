@@ -23,7 +23,7 @@ const Projects = () => {
       try {
         setLoading(true);
         // Backend filters data based on mode, but we can double-check on client
-        const url = `http://localhost:5000/api/v1/projects?recruiterMode=${isRecruiterMode}`;
+        const url = `https://portfolio-project-h6oi.onrender.com/api/v1/projects?recruiterMode=${isRecruiterMode}`;
         const response = await fetch(url);
         
         if (!response.ok) throw new Error("Backend offline");

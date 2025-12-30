@@ -26,7 +26,7 @@ const ProjectCard = ({ project }) => {
     if (!window.confirm(`Are you sure you want to delete "${project.title}"?`)) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/v1/projects/${project._id}`, {
+      const response = await fetch(`https://portfolio-project-h6oi.onrender.com/api/v1/projects/${project._id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${isAdmin}` // Send the token!

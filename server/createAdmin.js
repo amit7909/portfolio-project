@@ -1,7 +1,7 @@
 // createAdmin.js
 require('dotenv').config();
 const mongoose = require('mongoose');
-const User = require('./src/models/user');
+const User = require('./src/models/User');
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('✅ Connected to DB'))

@@ -5,6 +5,8 @@ import { RecruiterProvider } from './context/RecruiterContext';
 // Components
 import Navbar from './components/Navbar';
 import RecruiterToggle from './components/RecruiterToggle';
+import AiInterviewer from './components/AiInterviewer'; 
+import OnboardingTour from './components/OnboardingTour'; // <--- 1. IMPORT ADDED
 
 // Pages
 import Hero from './pages/Hero';
@@ -15,12 +17,18 @@ import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import AdminLogin from './pages/AdminLogin';
 import Signup from './pages/Signup';
-import EditProject from './pages/EditProject'; // <--- 1. NEW IMPORT
+import EditProject from './pages/EditProject';
+
 
 function App() {
   return (
     <RecruiterProvider>
       <Router>
+        
+        {/* --- 2. TOUR COMPONENT ADDED HERE --- */}
+        {/* This sits above everything else to create the overlay */}
+        <OnboardingTour />
+
         <div className="bg-primary min-h-screen text-textMain font-sans selection:bg-accent selection:text-primary">
           
           <Routes>
@@ -34,7 +42,10 @@ function App() {
                 <Skills />
                 <Experience />
                 <Contact />
+                
+                {/* FLOATING WIDGETS */}
                 <RecruiterToggle />
+                <AiInterviewer /> 
               </>
             } />
 
@@ -45,7 +56,6 @@ function App() {
             <Route path="/admin/signup" element={<Signup />} />
 
             {/* ROUTE GROUP 3: ADMIN DASHBOARD PAGES */}
-            {/* This :id allows us to grab the project ID from the URL */}
             <Route path="/admin/edit/:id" element={<EditProject />} /> 
             
           </Routes>

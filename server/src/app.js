@@ -7,7 +7,8 @@ const rateLimit = require('express-rate-limit');
 
 // === IMPORT ROUTES ===
 const projectRoutes = require('./routes/projectRoutes'); 
-const authRoutes = require('./routes/authRoutes'); // <--- NEW LINE 1: Import Auth
+const authRoutes = require('./routes/authRoutes');
+const aiRoutes = require('./routes/aiRoutes');
 
 const app = express();
 
@@ -22,7 +23,8 @@ if (process.env.NODE_ENV === 'development') {
 
 // === CONNECT ROUTES ===
 app.use('/api/v1/projects', projectRoutes);
-app.use('/api/v1/auth', authRoutes); // <--- NEW LINE 2: Mount Auth Routes
+app.use('/api/v1/auth', authRoutes); 
+app.use('/api/v1/ai', aiRoutes);
 
 // Simple test route
 app.get('/', (req, res) => {

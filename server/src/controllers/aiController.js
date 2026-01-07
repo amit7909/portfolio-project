@@ -1,7 +1,9 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config(); // <--- CHANGE 1: ADD THIS LINE
 
-// --- 1. DIRECT API KEY ---
-const genAI = new GoogleGenerativeAI("AIzaSyAMF6WiyGzu28OVY934rbz5pfCYKIsqEqI");
+// --- 1. SECURE API KEY ---
+// CHANGE 2: USE PROCESS.ENV INSTEAD OF HARDCODED STRING
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // --- 2. YOUR FULL RESUME DATA ---
 const resumeData = `

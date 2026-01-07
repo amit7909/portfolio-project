@@ -82,7 +82,8 @@ const AiInterviewer = () => {
     setIsLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/v1/ai/interview', { message: textToSend });
+      // --- FIX: UPDATED URL TO RENDER ---
+      const res = await axios.post('https://portfolio-project-h6oi.onrender.com/api/v1/ai/interview', { message: textToSend });
       const reply = res.data.reply;
       setMessages(prev => [...prev, { sender: 'ai', text: reply }]);
       if (mode === 'voice') speak(reply);
